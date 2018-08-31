@@ -34,24 +34,29 @@ class Dashboard extends Component{
 
   render(){
     const homes = this.props.houses.map(e=> 
-      <div>
-        <img src={e.img}/>
-        <div>Property Name: {e.name}</div>
-        <div>Address: {e.address}</div>
-        <div>City: {e.city}</div>
-        <div>State: {e.state}</div>
-        <div>Zip Code: {e.zip}</div>
-        <div>Mortgage: {e.mortgage}</div>
-        <div>Rent: {e.rent}</div>
+      <div className = 'card'>
         <Delete id={e.house_id}/>
+        <img src={e.img} height='200' width='300' className='housepic'/>
+        <div className='info'>
+          <div>Property Name: {e.name}</div>
+          <div>Address: {e.address}</div>
+          <div>City: {e.city}</div>
+          <div>State: {e.state}</div>
+          <div>Zip Code: {e.zip}</div>
+        </div>
+        <div className='moneyinfo'>
+          <div>Mortgage: {e.mortgage}</div>
+          <div>Rent: {e.rent}</div>
+        </div>
+        
       </div>
      )
      
     return(
-      <div>
+      <div className='dash'>
         <p className='db_top'>
           <h1>Dashboard</h1>
-          <Link to={'/wiz1'}><button>Add New Property</button></Link>
+          <Link to={'/wiz1'}><button className='add_prop'>Add New Property</button></Link>
         </p>
       {homes}
       </div>

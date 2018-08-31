@@ -8,12 +8,19 @@ class Wizard2 extends Component{
 
   render(){
     return(
-      <div>
-        <Link to={'/'}><button onClick={()=> this.props.clearInputs()}>Cancel</button></Link>
+      <div className='listing'>
+        <p className='db_top'>
+        <h1>Add New Listing</h1>
+        <Link to={'/'}><button onClick={()=> this.props.clearInputs()} className='cancel'>Cancel</button></Link>
+        </p>
+        <p className='propin'>
          Image URL:
         <input placeholder={this.props.image} onChange={e=> this.props.newImage(e.target.value)}></input>
-        <Link to={'/wiz1'}><button>Previous Step</button></Link>
-        <Link to={'/wiz3'}><button>Next Step</button></Link>
+        </p>
+        <p className="PandN">
+        <Link to={'/wiz1'}><button className='botbut'>Previous Step</button></Link>
+        <Link to={'/wiz3'}><button className='botbut'>Next Step</button></Link>
+        </p>
       </div>
     )
   }

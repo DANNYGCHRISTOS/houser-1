@@ -8,7 +8,7 @@ constructor(props){
 }
 render(){
   return(
-    <button onClick={() => this.props.deleteHouse(this.props.id)}>Delete</button>
+    <button onClick={() => this.props.deleteHouse(this.props.id)} className='Dbutton'>X</button>
   )
 }
 }

@@ -8,25 +8,35 @@ class Wizard3 extends Component{
 
   render(){
     return(
-      <div>
-        <Link to={'/'}><button onClick={()=> this.props.clearInputs()}>Cancel</button></Link>
+      <div className='listing'>
+        <p className='db_top'>
+          <h1>Add New Listing</h1>
+          <Link to={'/'}><button onClick={()=> this.props.clearInputs()} className='cancel'>Cancel</button></Link>
+        </p>
         Recommended Rent: {Math.trunc(this.props.mortgage*1.25)}
         <br/>
+        <br/>
+        <p className='propin2'>
          Monthly Mortgage:
         <input placeholder={this.props.mortgage} onChange={e=> this.props.newMortgage(e.target.value)}></input>
+        <br/>
+        <br/>
         Desired Rent:
         <input placeholder={this.props.rent} onChange={e => this.props.newRent(e.target.value)}></input>
-        <Link to={'/wiz2'}><button>Previous Step</button></Link>
+        </p>
+        <p className="PandN">
+        <Link to={'/wiz2'}><button className='botbut'>Previous Step</button></Link>
         <Link to={'/'}><button onClick={() => this.props.addHouse(
           this.props.propertyName,
-          this.props.address,
+          this.props.address,    
           this.props.city,
           this.props.propertyState,
           this.props.zip,
           this.props.image,
           this.props.mortgage,
           this.props.rent
-        )}>Complete</button></Link>
+        )} className='botbut'>Complete</button></Link>
+        </p>
       </div>
     )
   }

@@ -12,19 +12,28 @@ class Wizard1 extends Component{
 
   render(){
     return(
-      <div>
-        <Link to={'/'}><button onClick={()=> this.props.clearInputs()}>Cancel</button></Link>
+      <div className='listing'>
+        <p className='db_top'>
+        <h1>Add New Listing</h1>
+        <Link to={'/'}><button onClick={()=> this.props.clearInputs()} className='cancel'>Cancel</button></Link>
+        </p >
+        <p className='propin'>
         Property Name:
         <input placeholder={this.props.propertyName} onChange={e=> this.props.newName(e.target.value)}></input>
+        </p>
+        <p className="address">
         Address:
         <input placeholder={this.props.address} onChange={e=> this.props.newAddress(e.target.value)}></input>
+        </p>
+        <p>
         City:
         <input placeholder={this.props.city} onChange={e=> this.props.newCity(e.target.value)}></input>
         State:
         <input placeholder={this.props.propertyState} onChange={e=> this.props.newState(e.target.value)}></input>
         Zip Code:
         <input placeholder={this.props.zip} onChange={e=> this.props.newZip(e.target.value)}></input>
-        <Link to={'/wiz2'}><button>Next Step</button></Link>
+        </p>
+        <Link to={'/wiz2'}><button className='next'>Next Step</button></Link>
       </div>
     )
   }
